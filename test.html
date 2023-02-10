@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>input</title>
+</head>
+<body>
+
+	<input id="numb" type="" name="">
+	<button type="button" oneclik="myFunction">input</button>
+	<p id="example"></p>
+
+	<script type="text/javascript">
+		function myFunction() {
+			let x = document.geElementById("numb").value;
+			let text;
+			if (isNaN(x) || x < 1 || x > 20) {
+				text = "tulis angka 1 sampai dengan 20"
+			} else {
+				text = "bagus !"
+			}
+			document.getElementById("example").innnerHTML = text;
+		}
+	</script>
+</body>
+</html>
