@@ -171,7 +171,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap.min.js"></script>
-      <script src="Laucontact.js"></script>
+      <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby7_hxP0W2zoDd9_vEqJLiWtFxGPQfXNEmca31vVshCAUObc3Vwk8QBnx2gKlw1cl56IQ/exec'
+       const form = dokumen. formulir['lau-contact']
+
+      bentuk. addEventListener('kirim', e => {
+      e. cegahDefault()
+      fetch(scriptURL, { method: 'POST', body:  new FormData(form)})
+      . lalu(response => console. log('Sukses!' , tanggapan))
+      . catch(error => console. error('Kesalahan!' , kesalahan. pesan))
+  })
+      </script>
 
   </body>
 </html>
