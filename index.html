@@ -115,7 +115,7 @@
 
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
-            <form name="lau-contact">
+            <form name="new-data">
               <div class=" ">
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" class="form-control" placeholder="masukkan nama" name="nama">
@@ -172,16 +172,16 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap.min.js"></script>
       <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycby7_hxP0W2zoDd9_vEqJLiWtFxGPQfXNEmca31vVshCAUObc3Vwk8QBnx2gKlw1cl56IQ/exec';
-      const form = dokumen. formulir['lau-contact'];
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxBXzsKUyGKZ9FWj82mpb0fltNfvD613cH-wHQEfv9o-9XudFjeB839Ex80vYAtiZxUkg/exec';
+        const form = document.forms['new-data'];
 
-      bentuk. addEventListener('kirim', e => {
-      e. cegahDefault();
-      fetch(scriptURL, { method: 'POST', body:  new FormData(form)})
-      . lalu(response => console. log('Sukses!' , tanggapan))
-      . catch(error => console. error('Kesalahan!' , kesalahan. pesan))
-      });
-      </script>
+        form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+        });
+    </script>
 
   </body>
 </html>
